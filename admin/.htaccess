@@ -1,0 +1,4 @@
+AuthName "Page d'administration protégée"
+AuthType Basic
+AuthUserFile "/web/web1/f/foerster/public/admin/.htpasswd"
+Require valid-user

@@ -1,0 +1,35 @@
+body{
+background-color : #EEEEEE;
+}
+
+h1,h2{
+margin-left:30px;
+padding : 20px;
+color : #B02B2C;
+clear : both;
+}
+
+img { border: 0;}
+a { text-decoration: none; }
+#bottom { clear: both; }
+
+.vignette { 
+    display: inline;
+    float:left;
+
+}
+
+.vignette img {
+    display: inline;
+    border : 5px solid #36393D ;
+}
+
+form {
+clear : both;
+}
+
+#label_viderCache{
+font-size : 30px;
+color : #B02B2C ;
+}
+
