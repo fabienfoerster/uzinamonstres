@@ -14,16 +14,6 @@
 	</head>
 	<body>
 		<div id="header">
-			<div id="log_form">
-			<?php
-				if(isConnected()){
-					logoutForm();
-				}
-				else{
-					loginForm();
-				}
-			?>
-			</div>
 			<h1><a href="index.php">Uzinamonstres</a></h1>
 		</div>
 		
