@@ -17,13 +17,5 @@
 			<h1><a href="index.php">Uzinamonstres</a></h1>
 		</div>
 		
-		<div id="menu">
-			<ul>
-				<li><a href="index.php">Accueil</a></li>		
-				<li><a href="atelier.php">Atelier</a></li>		
-				<li><a href="gallery.php">Galerie</a></li>
-				<li><a href="upload.php">Upload</a></li>	
-			</ul>
-		</div>
 
 
