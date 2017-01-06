@@ -1,21 +1,65 @@
-<?php require_once("static/header.php"); ?>
+<?php
+	require_once("inc/security.php");
+	
 
-<div id="main" >
-	<p>
-		Bienvenue sur uzinamonstres ! Envie de vous détendre un moment ? 
-		Créez votre propre monstre dans notre <a href="atelier.php#atelier">atelier</a> ! 
-		Choisissez vous-mêmes les membres, couleurs de vos monstres et équippez-les d'accessoires loufoques ! 
-		Pas encore inscrit ? Ne perdez pas une minute, c'est par <a href="inscription.php">ici</a> !
-	</p>
-	<p>
-		Envie de partager vos créations monstrueuses avec vos amis ? 
-		Publiez-les sur notre <a href="gallery.php">galerie</a>. Votez pour vos dessins préférés et laissez des commentaires. 
-	</p>
-	<p>
-		Artiste en herbe ? Nous vous permettons d'uploader vos propres dessins et des les intégrer à notre site. 
-		Rendez-vous sur l'<a href="upload.php">upload</a> de dessins !  
-	</p>
+
+require_once("static/header.php"); 
+echo '<script type="text/javascript" charset="utf-8" src="js/atelier.js"></script>';
+
+echo "
+<div id='atelier'>
+<div id='buttons'>
+	<p>Nom du monstre :<input type='text' id='monster_name'/></p>
+	<button id='toTop'>
+		Mettre au premier plan
+	</button>
+	<button id='toBottom'>
+		Mettre au second plan
+	</button>
+	<button id='rotateplus'>
+		Rotation +
+	</button>
+	<button id='rotateminus'>
+		Rotation -
+	</button>
+	<button id='sizeplus'>
+		Taille +
+	</button>
+	<button id='sizeminus'>
+		Taille -
+	</button>
+	<button id='save'>
+		Sauvegarder dans la galerie
+	</button>
+	<button id='erase'>
+		Effacer
+	</button>
+	
+	
 </div>
+<div id='container'>
+</div>
+<div id='inventaire'>
+	<div>
+		<select onchange='getAllParts(this.options[this.selectedIndex].value)'>
+			<option value='head'>Tête</option>
+			<option value='body'>Corps</option>
+			<option value='left_arm'>Bras Gauche</option>
+			<option value='right_arm'>Bras Droit</option>
+			<option value='left_leg'>Jambe Gauche</option>
+			<option value='right_leg'>Jambe Droite</option>
+			<option value='appurtenance'>Accesoire</option>
+		</select>
+	</div>
+	<div id='drop_part'>
+	<script type='text/javascript'>getAllParts('head');</script>	
+	</div>
+</div>
+</div>";
 
 
-<?php require_once("static/footer.html"); ?>
+
+require_once("static/footer.html"); 
+
+
+?>
