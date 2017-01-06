@@ -17,12 +17,12 @@ window.onload = function() {
 				/* In addition to <a>'s "download" attribute, you can define HTTP-style headers */
 				dt = dt.replace(/^data:application\/octet-stream/, 'data:application/octet-stream;headers=Content-Disposition%3A%20attachment%3B%20filename=Canvas.png');
 			  var monster_name = document.getElementById("monster_name").value || "mybeautifulmonster";
-			  monster_name = monster_name.trim().toLowerCase();
+			  monster_name = monster_name.trim().toLowerCase().replace(/\s/g,'');
 			  var saveLink = document.createElement("a")
 			saveLink.download = monster_name + ".png"
 			saveLink.href = dt;
 			saveLink.click();
-			
+
           });
 
         }
