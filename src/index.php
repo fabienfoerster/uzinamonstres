@@ -27,11 +27,11 @@ echo "
 	<button id='sizeminus'>
 		Taille -
 	</button>
-	<button id='save'>
-		Sauvegarder dans la galerie
-	</button>
 	<button id='erase'>
 		Effacer
+	</button>
+	<button id='save'>
+		Enregistrer
 	</button>
 	
 	

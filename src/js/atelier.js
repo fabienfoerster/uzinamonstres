@@ -8,6 +8,24 @@ window.onload = function() {
 		height: 600
 	});
 	layer = new Kinetic.Layer();
+
+	save = function() {
+          stage.toDataURL(function(dataUrl) {
+			  var dt = dataUrl;
+			  dt = dt.replace(/^data:image\/[^;]*/, 'data:application/octet-stream');
+
+				/* In addition to <a>'s "download" attribute, you can define HTTP-style headers */
+				dt = dt.replace(/^data:application\/octet-stream/, 'data:application/octet-stream;headers=Content-Disposition%3A%20attachment%3B%20filename=Canvas.png');
+			  var monster_name = document.getElementById("monster_name").value || "mybeautifulmonster";
+			  monster_name = monster_name.trim().toLowerCase();
+			  var saveLink = document.createElement("a")
+			saveLink.download = monster_name + ".png"
+			saveLink.href = dt;
+			saveLink.click();
+			
+          });
+
+        }
 	
 	// add button event bindings
         document.getElementById("toTop").addEventListener("click", function() {
@@ -46,22 +64,7 @@ window.onload = function() {
         }, false);
         
         
-       document.getElementById("save").addEventListener("click", function() {
-          stage.toDataURL(function(dataUrl) {
-			var monster_name = document.getElementById("monster_name").value;  
-			var xhr = getXMLHttpRequest();
-			xhr.open("POST", "inc/handlingData.php", true);
-			xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-			xhr.send("dataURL="+dataUrl+"&name="+monster_name);
-			xhr.onreadystatechange = function() {
-			if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
-					alert(xhr.responseText); // Données textuelles récupérées
-			}
-};
-            
-          });
-
-        }, false);
+       document.getElementById("save").addEventListener("click", save, false);
         
        document.getElementById("erase").addEventListener("click", function() {
 		   stage.reset();
