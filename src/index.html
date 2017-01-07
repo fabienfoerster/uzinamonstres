@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Uzinamonstres - Assemblez un monstre à votre image</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<link rel="stylesheet" href="css/style.css" type="text/css" />
+	<link rel="icon" type="image/png" href="favicon.png" />
+	<script type="text/javascript" charset="utf-8" src="js/weblib.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/kinetic-v3.9.8.min.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/atelier.js"></script>
+</head>
+
+<body>
+	<div id="header">
+		<h1><a href="index.php">Uzinamonstres</a></h1>
+	</div>
+
+
+	<div id='atelier'>
+		<div id='buttons'>
+			<p>Nom du monstre :<input type='text' id='monster_name' /></p>
+			<button id='toTop'>
+		Mettre au premier plan
+	</button>
+			<button id='toBottom'>
+		Mettre au second plan
+	</button>
+			<button id='rotateplus'>
+		Rotation +
+	</button>
+			<button id='rotateminus'>
+		Rotation -
+	</button>
+			<button id='sizeplus'>
+		Taille +
+	</button>
+			<button id='sizeminus'>
+		Taille -
+	</button>
+			<button id='erase'>
+		Effacer
+	</button>
+			<button id='save'>
+		Enregistrer
+	</button>
+
+
+		</div>
+		<div id='container'>
+		</div>
+		<div id='inventaire'>
+			<div>
+				<select onchange='getAllParts(this.options[this.selectedIndex].value)'>
+					<option value='head'>Tête</option>
+					<option value='body'>Corps</option>
+					<option value='left_arm'>Bras Gauche</option>
+					<option value='right_arm'>Bras Droit</option>
+					<option value='left_leg'>Jambe Gauche</option>
+					<option value='right_leg'>Jambe Droite</option>
+					<option value='appurtenance'>Accesoire</option>
+				</select>
+			</div>
+		<div id='drop_part'>
+			<script type='text/javascript'>getAllParts('head');</script>
+		</div>
+</div>
+</div>
+<div id="footer">
+	<p>
+		Ce site est la propriété intellectuelle de Nobel Ballhysa et de Fabien Foerster
+	</p>
+
+</div>
+</body>
+
+</html>
